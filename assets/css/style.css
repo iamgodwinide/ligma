@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "Mostly Mono";
+    src: url('/assets/fonts/MostlyMono.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Mostly Mono";
+    margin: 0;
+    padding: 0;
+    background-image: url(/assets/img/backgroundcolour.png);
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+a{
+    font-family: "Mostly Mono";
+    color: #000;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul a {
+    margin-right: 1em;
+}
+
+nav ul a img{
+    width: 4em;
+}
+
+main{
+    display: flex;
+    margin-top: 3em;
+}
+
+main .content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img.text{
+    width: 40em;
+    display: block;
+    margin-bottom: 2em;
+}
+
+img.register{
+    width: 10em;
+    display: block;
+    cursor: pointer;
+}
+
+img.text,
+img.register{
+    animation-name: slide;
+    animation-duration: 2.3s;
+    animation-delay: 2.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    transform: translateX(-700px);
+}
+
+
+.lig-wrap img{
+    width: 20em;   
+    animation-name: crawlup;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    transform: translate(-10vw, 130vh);
+}
+
+
+
+@keyframes slide {
+    from{
+        transform: translateX(-700px);
+    }to{
+        transform: translateX(50px);
+    }
+}
+
+@keyframes crawlup {
+    0%{
+        transform: translate(-10vw, 130vh);
+    }
+    50%{
+        transform: translate(-10vw, 15vh);
+    }
+    100%{
+        transform: translate(3vw, 15vh);
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    main .content{
+        width: 100%;
+        margin-top: 4em;
+    }
+
+    img.text{
+        width: 70vw;
+        margin-bottom: 2em;
+        margin: 0 auto;
+        margin-bottom: 2em;
+    }
+    
+    img.register{
+        width: 8em;
+    }
+
+    .lig-wrap{
+        display: none;
+    }
+
+    .lig-wrap img{
+        animation-name: none;
+    }
+
+    img.text,
+    img.register{
+        animation-name: none;
+        transform: translateX(10px);
+    } 
+}
